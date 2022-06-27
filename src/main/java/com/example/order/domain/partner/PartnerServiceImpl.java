@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class PartnerServiceImpl implements PartnerService{
 private final PartnerStore partnerStore;
+private final PartnerReader partnerReader;
     @Override
     public PartnerInfo registerPartner(PartnerCommand command) {
         //1. command로 넘어온것을 initPartner로 변환
@@ -23,16 +24,23 @@ private final PartnerStore partnerStore;
 
     @Override
     public PartnerInfo getPartnerInfo(String partnerToken) {
-        return null;
+        //1. Token -> Partner
+        //2. Partner -> PartnerInfo
+        Partner partner=partnerReader.getPartner(partnerToken);
+        return new PartnerInfo(partner);
     }
 
     @Override
     public PartnerInfo enablePartner(String partnerToken) {
-        return null;
+        Partner partner=partnerReader.getPartner(partnerToken);
+        partner.enable();
+        return new PartnerInfo(partner);
     }
 
     @Override
     public PartnerInfo disablePartner(String partnerToken) {
-        return null;
+        Partner partner=partnerReader.getPartner(partnerToken);
+        partner.enable();
+        return new PartnerInfo(partner);
     }
 }
