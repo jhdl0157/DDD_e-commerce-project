@@ -42,3 +42,4 @@
 - Entity의 아이디 값을 외부에 노출시키는것이 아니라 대체키를 사용하여 노출시킨다.
 - 의존성 역전 원친(DIP)를 지켜가면서 설계를 한다. [DIP란](https://thisisthat-it.tistory.com/145)
 - Service와 Service간의 참조는 하지 않는다.참조가 이뤄지는 순간 상하관계가 설정이 되고 TestCode작성시 목킹해야할 것이 많아진다. 
+- 읽고 있는 [좋은코드, 나쁜코드](https://book.naver.com/bookdb/book_detail.nhn?bid=22462163)를 최대한 적용시켜서 좋은코드로 작성해보기 
