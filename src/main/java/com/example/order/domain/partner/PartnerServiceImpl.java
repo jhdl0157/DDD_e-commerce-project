@@ -1,12 +1,14 @@
 package com.example.order.domain.partner;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class PartnerServiceImpl implements PartnerService{
-
+private final PartnerStore partnerStore;
     @Override
     public PartnerInfo registerPartner(PartnerCommand command) {
         //1. command로 넘어온것을 initPartner로 변환
@@ -15,16 +17,8 @@ public class PartnerServiceImpl implements PartnerService{
 
         var initPartner=command.toEntity();
         //여기서 JPA를 쓰지 않는다.
-        Partner partner=partnerStore.store(initPartner);
-
-        return PartnerInfo.builder()
-                .id(partner.getId())
-                .partnerToken(partner.getPartnerToken())
-                .partnerName(partner.getPartnerName())
-                .businessNo(partner.getBusinessNo())
-                .email(partner.getEmail())
-                .status(partner.getStatus())
-                .build();
+        Partner partner= partnerStore.store(initPartner);
+        return new PartnerInfo(partner);
     }
 
     @Override

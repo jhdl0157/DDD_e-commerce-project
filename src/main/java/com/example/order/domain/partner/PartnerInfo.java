@@ -15,4 +15,13 @@ public class PartnerInfo {
     private final String businessNo;
     private final String email;
     private final Partner.Status status;
+
+    public PartnerInfo(Partner partner) {
+        this.id = partner.getId();
+        this.partnerToken = partner.getPartnerToken();
+        this.partnerName = partner.getPartnerName();
+        this.businessNo = partner.getBusinessNo();
+        this.email = partner.getEmail();
+        this.status = partner.getStatus();
+    }
 }
