@@ -1,11 +1,10 @@
-package com.example.order.infrastructure;
+package com.example.order.infrastructure.partner;
 
 import com.example.order.common.exception.EntityNotFoundException;
 import com.example.order.domain.partner.Partner;
 import com.example.order.domain.partner.PartnerReader;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Component;
 
 @Component

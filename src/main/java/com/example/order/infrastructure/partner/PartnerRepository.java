@@ -1,4 +1,4 @@
-package com.example.order.infrastructure;
+package com.example.order.infrastructure.partner;
 
 import com.example.order.domain.partner.Partner;
 import org.springframework.data.jpa.repository.JpaRepository;
