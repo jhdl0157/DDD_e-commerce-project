@@ -1,5 +1,6 @@
 package com.example.order.common.exception;
 
+import com.example.order.common.response.ErrorCode;
 import lombok.Getter;
 
 @Getter

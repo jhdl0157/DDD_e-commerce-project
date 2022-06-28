@@ -6,7 +6,7 @@ import lombok.Getter;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
-@Builder
+
 @Getter
 public class PartnerInfo {
     private final Long id;
@@ -15,7 +15,7 @@ public class PartnerInfo {
     private final String businessNo;
     private final String email;
     private final Partner.Status status;
-
+    @Builder
     public PartnerInfo(Partner partner) {
         this.id = partner.getId();
         this.partnerToken = partner.getPartnerToken();

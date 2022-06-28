@@ -1,5 +1,7 @@
 package com.example.order.common.exception;
 
+import com.example.order.common.response.ErrorCode;
+
 public class EntityNotFoundException extends BaseException {
 
     public EntityNotFoundException() {
