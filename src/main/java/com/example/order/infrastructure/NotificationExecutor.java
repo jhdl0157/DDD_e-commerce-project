@@ -10,7 +10,6 @@ public class NotificationExecutor implements NotificationService {
     @Override
     public void sendEmail(String email, String title, String description) {
         log.info("이메일 전송");
-
     }
 
     @Override

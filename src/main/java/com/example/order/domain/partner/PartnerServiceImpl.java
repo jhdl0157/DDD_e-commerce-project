@@ -17,7 +17,6 @@ private final PartnerReader partnerReader;
         //1. command로 넘어온것을 initPartner로 변환
         //2. initPartner를 디비에 저장
         //3. Partner를 PartnerInfo로 변환후 리턴
-
         var initPartner=command.toEntity();
         //여기서 JPA를 쓰지 않는다.
         Partner partner= partnerStore.store(initPartner);
