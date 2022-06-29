@@ -4,6 +4,7 @@ package com.example.order.domain.item.optiongroup;
 import com.example.order.common.exception.InvalidParamException;
 import com.example.order.domain.AbstractEntity;
 import com.example.order.domain.item.Item;
+import com.example.order.domain.item.option.ItemOption;
 import com.google.common.collect.Lists;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,6 +14,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @Getter
@@ -31,7 +34,7 @@ public class ItemOptionGroup extends AbstractEntity {
     private Integer ordering;
     private String itemOptionGroupName;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "itemOptionGroup", cascade = CascadeType.PERSIST)
-    private List<ItemOption> itemOptionList = Lists.newArrayList();
+    private List<ItemOption> itemOptionList = new ArrayList<>();
 
     @Builder
     public ItemOptionGroup(Item item, Integer ordering, String itemOptionGroupName) {

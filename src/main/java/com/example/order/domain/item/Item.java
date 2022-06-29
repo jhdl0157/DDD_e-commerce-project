@@ -3,6 +3,7 @@ package com.example.order.domain.item;
 import com.example.order.common.exception.InvalidParamException;
 import com.example.order.common.util.TokenGenerator;
 import com.example.order.domain.AbstractEntity;
+import com.example.order.domain.item.optiongroup.ItemOptionGroup;
 import com.google.common.collect.Lists;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,6 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.*;
 import java.security.PrivateKey;
+import java.util.List;
 
 
 @Getter
